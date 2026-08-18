@@ -75,24 +75,28 @@ export default function HomePage() {
             label="ทรัพย์สิน"
             value="฿0"
             description="ยังไม่มีข้อมูล"
+            tone="asset"
           />
           <StatCard
             icon={<CreditCard size={18} />}
             label="หนี้สิน"
             value="฿0"
             description="ยังไม่มีข้อมูล"
+            tone="debt"
           />
           <StatCard
             icon={<TrendingUp size={18} />}
             label="เงินลงทุน"
             value="฿0"
             description="ยังไม่มีข้อมูล"
+            tone="investment"
           />
           <StatCard
             icon={<ShieldCheck size={18} />}
             label="ทุนประกัน"
             value="฿0"
             description="ยังไม่มีข้อมูล"
+            tone="insurance"
           />
         </section>
 
@@ -107,7 +111,26 @@ export default function HomePage() {
 
         <section className="dashboard-grid">
           <section className="card card-padding">
-            <div className="section-title">ภาพรวมทรัพย์สิน</div>
+            <div className="section-title">ภาพรวมตามประเภท</div>
+
+            <div className="category-legend">
+              <div className="category-legend-item category-asset">
+                <span className="category-dot" />
+                ทรัพย์สิน
+              </div>
+              <div className="category-legend-item category-debt">
+                <span className="category-dot" />
+                หนี้สิน
+              </div>
+              <div className="category-legend-item category-investment">
+                <span className="category-dot" />
+                เงินลงทุน
+              </div>
+              <div className="category-legend-item category-insurance">
+                <span className="category-dot" />
+                ประกัน
+              </div>
+            </div>
 
             <div className="donut-wrapper">
               <div className="donut" />
