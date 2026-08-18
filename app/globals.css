@@ -12,8 +12,17 @@
   --gold-light: #eee4cc;
   --text: #3f4039;
   --text-secondary: #77786f;
-  --danger: #a9695d;
-  --danger-light: #f1ded9;
+  --debt: #8f3f35;
+  --debt-soft: #b86b61;
+  --debt-light: #f2dedb;
+  --asset: #6f7f68;
+  --asset-light: #dfe7d8;
+  --insurance: #6f8f97;
+  --insurance-light: #dce9eb;
+  --investment: #a16f42;
+  --investment-light: #efe1d0;
+  --danger: var(--debt);
+  --danger-light: var(--debt-light);
   --border: #e4dbce;
   --shadow: 0 8px 30px rgba(83, 70, 53, 0.06);
   --radius: 18px;
@@ -198,12 +207,14 @@ a { color: inherit; text-decoration: none; }
   height: 175px;
   border-radius: 50%;
   background: conic-gradient(
-    var(--earth) 0deg,
-    var(--earth) 220deg,
-    var(--sage) 220deg,
-    var(--sage) 315deg,
-    var(--gold) 315deg,
-    var(--gold) 360deg
+    var(--asset) 0deg,
+    var(--asset) 132deg,
+    var(--debt) 132deg,
+    var(--debt) 216deg,
+    var(--investment) 216deg,
+    var(--investment) 300deg,
+    var(--insurance) 300deg,
+    var(--insurance) 360deg
   );
   display: flex;
   align-items: center;
@@ -221,6 +232,105 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   font-size: 21px;
   font-weight: 700;
+}
+
+
+.category-legend {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 auto 12px;
+  max-width: 330px;
+}
+
+.category-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.category-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--category-color);
+}
+
+.category-asset { --category-color: var(--asset); }
+.category-debt { --category-color: var(--debt); }
+.category-investment { --category-color: var(--investment); }
+.category-insurance { --category-color: var(--insurance); }
+
+.kpi-card.category-asset,
+.kpi-card.category-debt,
+.kpi-card.category-investment,
+.kpi-card.category-insurance {
+  border-color: color-mix(in srgb, var(--category-color) 26%, var(--border));
+}
+
+.kpi-card.category-asset .kpi-icon,
+.kpi-card.category-debt .kpi-icon,
+.kpi-card.category-investment .kpi-icon,
+.kpi-card.category-insurance .kpi-icon {
+  color: var(--category-color);
+}
+
+.theme-debt .page-title,
+.theme-debt .page-accent {
+  color: var(--debt);
+}
+
+.category-status-card {
+  display: grid;
+  gap: 14px;
+}
+
+.category-status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.category-status-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--debt);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.category-badge {
+  border-radius: 999px;
+  padding: 6px 11px;
+  background: var(--debt-light);
+  color: var(--debt);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.category-progress {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #eee7dc;
+}
+
+.category-progress-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--debt);
+}
+
+.debt-balance {
+  color: var(--debt-soft);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
 }
 
 .allocation-list {
