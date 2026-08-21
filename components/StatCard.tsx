@@ -5,19 +5,23 @@ type StatCardProps = {
   label: string;
   value: string;
   description: string;
-  tone?: "asset" | "debt" | "investment" | "insurance";
 };
 
 export default function StatCard({
   icon,
   label,
   value,
-  description,
-  tone
+  description
 }: StatCardProps) {
   return (
-    <div className={`card kpi-card${tone ? ` category-${tone}` : ""}`}>
-      <div className="kpi-icon">
+    <div className="card kpi-card">
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          color: "var(--earth)"
+        }}
+      >
         {icon}
       </div>
 

@@ -8,7 +8,7 @@ export default function DebtsPage() {
     <div className="app-shell">
       <Sidebar />
 
-      <main className="main-content theme-debt">
+      <main className="main-content">
         <header className="page-header">
           <div>
             <div className="page-eyebrow">Family Finance</div>
@@ -16,24 +16,7 @@ export default function DebtsPage() {
           </div>
         </header>
 
-        <section className="card card-padding category-status-card">
-          <div className="category-status-header">
-            <div className="category-status-title">
-              <CreditCard size={22} />
-              ภาพรวมหนี้สิน
-            </div>
-            <span className="category-badge">ค้างชำระ 0 รายการ</span>
-          </div>
-
-          <div>
-            <div className="page-eyebrow">ยอดคงเหลือ</div>
-            <div className="debt-balance">฿0</div>
-          </div>
-
-          <div className="category-progress" aria-label="ความคืบหน้าการชำระหนี้">
-            <div className="category-progress-fill" />
-          </div>
-
+        <section className="card card-padding">
           <EmptyState
             icon={<CreditCard size={22} />}
             title="ยังไม่มีข้อมูล"
